@@ -34,10 +34,11 @@
             <div class="col-6"> <!-- Utilizamos una columna de 6 para alinear el título a la izquierda -->
                 <h1 class="bg-primary text-white text-center py-4">Suppliers</h1>
             </div>
-            <div class="col-4 text-end"> <!-- Utilizamos una columna de 6 para alinear el botón a la derecha -->
-                <button type="button" class="btn btn-success mt-4 me-3">Add Supplier</button>
+        <div class="col-4 text-end"> <!-- Utilizamos una columna de 6 para alinear el botón a la derecha -->
+                <a href="{{ route('suppliers.create') }}" class="btn btn-success">Add supplier + </a>
             </div>
         </div>
+        
         <div class="row">
             <div class="col">
                 <div class="table-responsive"> <!-- Tabla responsiva-->
@@ -61,11 +62,9 @@
                                 <td> {{$item->address}}</td>
                                 <td> {{$item->phone}}</td>
                                 <td>
-                                    <button type="submit" class="btn btn-primary">Update</button>
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <a href="{{ route('suppliers.show', $item->id) }}" class="btn btn-info">Show</a>
                                 </td>
                             </tr>
-
                             @endforeach
 
                         </tbody>
